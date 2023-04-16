@@ -7,10 +7,11 @@ use App\Http\Controllers\VendorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\IndexController;
-use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -148,6 +149,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
   Route::get('/delete/subcategory/{id}',[SubCategoryController::class, 'DeleteSubCategory'])->name('delete.subcategory');
   Route::get('/subcategory/ajax/{id}',[SubCategoryController::class, 'GetSubCategory']);
+
+
+  // coupon oparation 
+  Route::controller(CouponController::class)->group(function(){
+      Route::get('all/coupon','AllCoupon')->name('all.coupon');
+      Route::get('add/coupon','AddCoupon')->name('add.coupon');
+      Route::put('stor/coupon','StoreCoupon')->name('coupon.store');
+      Route::get('edit/coupon/{id}','EditCoupon')->name('coupon.edit');
+      Route::post('update/coupon','UpdateCoupon')->name('coupon.update');
+
+
+  });
 
 
 });
