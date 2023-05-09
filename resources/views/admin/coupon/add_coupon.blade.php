@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-sm-3"></div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="submit" class="btn btn-primary px-4" value="Update  Profile" />
+                                            <input type="submit" class="btn btn-primary px-4" value="Add Couppon" />
                                         </div>
                                     </div>
                                 </form>

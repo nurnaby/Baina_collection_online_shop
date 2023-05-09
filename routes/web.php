@@ -158,6 +158,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
       Route::put('stor/coupon','StoreCoupon')->name('coupon.store');
       Route::get('edit/coupon/{id}','EditCoupon')->name('coupon.edit');
       Route::post('update/coupon','UpdateCoupon')->name('coupon.update');
+      Route::get('/delete/coupon/{id}', 'DeleteCoupon')->name('delete.coupon');
 
 
   });
@@ -233,7 +234,8 @@ Route::DELETE('delete-from-cart',[CartController::class, 'DeleteCart']);
 Route::get('cart',[CartController::class, 'index']);
 
 
-
+// userName:admin@gmail.com
+// pass:12345678
 
 
 

@@ -55,5 +55,18 @@ public function UpdateCoupon(Request $request){
 }//End method
 
 
+public function DeleteCoupon($id){
+    $coupon = Coupon::find($id);
+    $coupon->delete();
+    $notification = array(
+        'message' => 'Coupon Delete Successfully',
+        'alert-type' => 'error'
+    );
+
+    return redirect()->back()->with($notification); 
+
+}
+
+
 
 }
